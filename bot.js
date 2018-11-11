@@ -27,6 +27,7 @@ client.user.setGame(`Five Stars`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
 });
+client.login(process.env.BOT_TOKEN);
 
 client.on('message', function(message) {
     if (!message.member.hasPermissions(['ADMINISTRATOR'])){
@@ -43,8 +44,7 @@ client.on('message', function(message) {
             .setThumbnail(${message.author.avatarURL})
             .setAuthor(message.author.username, message.author.avatarURL) 
         .setFooter(${message.guild.name} Server)
-     message.channel.send(embed500) 
-
+     message.channel.send(embed500)
 
     }
     }
@@ -96,5 +96,3 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
-
-client.login(process.env.BOT_TOKEN);
